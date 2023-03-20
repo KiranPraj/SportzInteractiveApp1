@@ -2,10 +2,9 @@ package com.example.sportzinteractiveapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
-import com.example.sportzinteractiveapp.adapter.TeamAdapter
+import com.example.sportzinteractiveapp.adapter.MainAdapter
 import com.example.sportzinteractiveapp.databinding.ActivityMainBinding
 import com.example.sportzinteractiveapp.remote.MatchRepository
 import com.example.sportzinteractiveapp.remote.RetroInstane
@@ -15,7 +14,7 @@ import com.example.sportzinteractiveapp.viewmodel.MatchViewModelFactory
 
 class MainActivity : AppCompatActivity() {
     lateinit var viewModel: MatchViewModel
-    private val adapter=TeamAdapter()
+    private val adapter=MainAdapter()
     lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         viewModel.errormsg.observe(this){
 
         }
-       /* viewModel.loading.observe(this){
+      /*  viewModel.loading.observe(this){
            if (it){
                binding.progresbar.visibility=View.VISIBLE
            }

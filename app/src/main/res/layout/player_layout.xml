@@ -1,0 +1,56 @@
+
+
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:padding="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#093D71"
+        android:text="Player Name:"/>
+    <TextView
+        android:textSize="12sp"
+        android:textStyle="normal"
+        android:padding="1dp"
+        android:textColor="#093D71"
+        android:id="@+id/playerName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="kiran"/>
+
+    <TextView
+        android:visibility="gone"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        android:padding="5dp"
+        android:textColor="#1FB125"
+        android:id="@+id/isCaptain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Captain"/>
+    <TextView
+        android:visibility="gone"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        android:padding="5dp"
+        android:textColor="#DA8912"
+        android:id="@+id/isKeeper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Keeper"/>
+
+    <View
+        android:layout_width="wrap_content"
+        android:background="#A0A6A0"
+        android:layout_height="1dp"/>
+
+</LinearLayout>
+

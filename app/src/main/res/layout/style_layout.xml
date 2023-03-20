@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    android:padding="5dp"
+    >
+    <TextView
+        android:textSize="10sp"
+        android:textStyle="bold"
+        android:padding="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Batting Style:"/>
+    <TextView
+        android:textSize="10sp"
+        android:textStyle="normal"
+        android:padding="5dp"
+        android:id="@+id/batting_Style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Right"/>
+    <TextView
+        android:textSize="10sp"
+        android:textStyle="bold"
+        android:padding="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bowling Style:"/>
+    <TextView
+        android:textSize="10sp"
+        android:textStyle="italic"
+        android:padding="5dp"
+        android:id="@+id/bowling_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Left"/>
+
+</LinearLayout>

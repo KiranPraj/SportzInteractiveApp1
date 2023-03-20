@@ -6,39 +6,34 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sportzinteractiveapp.R
 import com.example.sportzinteractiveapp.databinding.PlayerLayoutBinding
-import com.example.sportzinteractiveapp.databinding.StyleLayoutBinding
 import com.example.sportzinteractiveapp.model.newmodel.TeamPlayer
-import kotlinx.coroutines.NonDisposableHandle.parent
 
-class TeamAdapter:RecyclerView.Adapter<TeamAdapter.TeamListViewHolder>(){
-       var allPlayerList= mutableListOf<TeamPlayer>()
-    class TeamListViewHolder(val binding: PlayerLayoutBinding):RecyclerView.ViewHolder(binding.root)
+class TeamAdapter2:RecyclerView.Adapter<TeamAdapter2.TeamListHolder>() {
+    var allPlayerList= mutableListOf<TeamPlayer>()
+    class TeamListHolder(val binding: PlayerLayoutBinding):RecyclerView.ViewHolder(binding.root)
 
-    fun setAdpterlist(playerist: List<TeamPlayer>) {
-        this.allPlayerList=playerist.toMutableList()
+
+    fun setAdapterLIst(playerList:List<TeamPlayer>){
+        this.allPlayerList=playerList.toMutableList()
         notifyDataSetChanged()
     }
 
-
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): TeamAdapter.TeamListViewHolder {
-        val inflater=LayoutInflater.from(parent.context)
-       val binding=PlayerLayoutBinding.inflate(inflater,parent,false)
-       return TeamListViewHolder(binding)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TeamAdapter2.TeamListHolder {
+       val inflater=LayoutInflater.from(parent.context)
+        val binding=PlayerLayoutBinding.inflate(inflater,parent,false)
+       return TeamListHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: TeamAdapter.TeamListViewHolder, position: Int) {
-       val playerList=allPlayerList[position]
-        Log.e("TAG","First Playerlist ${playerList}")
+    override fun onBindViewHolder(holder: TeamAdapter2.TeamListHolder, position: Int) {
+        val playerList=allPlayerList[position]
+        Log.e("TAG","Second Playerlist ${playerList}")
         holder.binding.playerName.text=playerList.Name_Full
        // holder.binding.battingStyle.text=playerList.Batting.Style
-      //  holder.binding.bowlingStyle.text=playerList.Bowling.Style
+       // holder.binding.bowlingStyle.text=playerList.Bowling.Style
+        Log.e("TAG","IS Caption value ${playerList.Iscaptain.toString()}")
         if (playerList.Iscaptain.equals(true)){
             holder.binding.isCaptain.visibility= View.VISIBLE
             holder.binding.isCaptain.text= "Captain"
@@ -53,9 +48,8 @@ class TeamAdapter:RecyclerView.Adapter<TeamAdapter.TeamListViewHolder>(){
         else{
             holder.binding.isKeeper.visibility= View.GONE
         }
-
         holder.binding.root.setOnClickListener {
-              val dialog=Dialog(it.context)
+            val dialog= Dialog(it.context)
             dialog.setContentView(R.layout.style_layout)
             dialog.setCancelable(true)
             val textview=dialog.findViewById<TextView>(R.id.batting_Style)
@@ -65,8 +59,8 @@ class TeamAdapter:RecyclerView.Adapter<TeamAdapter.TeamListViewHolder>(){
             dialog.show()
 
         }
-
     }
 
     override fun getItemCount()=allPlayerList.size
+
 }
